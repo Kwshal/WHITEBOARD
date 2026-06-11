@@ -2,27 +2,38 @@
      margin: 0;
      padding: 0;
      box-sizing: border-box;
-     font-family:monospace;
+     font-family: monospace;
      font-weight: bold;
-
 }
 
 body {
      margin: 0;
-     padding: 0;
+     padding: 10px;
+     min-height: 100vh;
      background-color: #b9b9b9;
      text-align: center;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: flex-start;
 }
+
 #whiteboard {
-     /* border: 1px solid #000; */
      background-color: #f5f5f5;
      cursor: crosshair;
+     width: min(98vw, 900px);
+     height: auto;
+     max-height: 80vh;
+     border: 1px solid #c1c1c1;
+     border-radius: 14px;
+     touch-action: none;
+     margin: 12px auto;
+     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 h1 {
-     /* text-align: center; */
      color: #554b70;
-     font-size: 2em;    
+     font-size: 2em;
 }
 
 #color {
@@ -34,43 +45,61 @@ h1 {
      cursor: pointer;
 }
 
-.page-type-icon {
-     display: inline-block;
-     min-width: 50px;
-     height: 50px;
-     padding: 5px 14px;
-     background: #b9b9b9;
-     cursor: pointer;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     gap: 5px;
-     transition: background-color 0.3s ease;
-     border-radius: 5px;
-}
-
-.page-type-icon span {
-     /* display: none; */
-     width: 0%;
-     transition: width 0.3s ease;
-     overflow: hidden;
-}
-.page-type-icon.selected span {
-     width: 100%;
-}
-
 .page-type {
      display: flex;
+     flex-wrap: wrap;
      justify-content: center;
      align-items: center;
      transition: all 0.3s ease;
      border-radius: 5px;
      margin: 5px;
-     gap: 7px;
+     gap: 10px;
 }
 
-.selected{
+.page-type-icon {
+     min-width: auto;
+     height: 50px;
+     padding: 8px 16px;
+     background: #b9b9b9;
+     cursor: pointer;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 8px;
+     transition: background-color 0.3s ease, transform 0.2s ease;
+     border-radius: 8px;
+}
+
+.page-type-icon:hover,
+.page-type-icon:focus {
+     background: #d6d6d6;
+     transform: translateY(-1px);
+}
+
+.page-type-icon span {
+     display: inline-block;
+     white-space: nowrap;
+     width: auto;
+     transition: opacity 0.3s ease;
+     opacity: 1;
+}
+
+.selected {
      background-color: #d6d6d6;
      border-radius: 7px;
 }
 
+@media (max-width: 600px) {
+     body {
+          padding: 8px;
+     }
+
+     .page-type-icon {
+          padding: 8px 12px;
+          gap: 6px;
+     }
+
+     .page-type-icon span {
+          font-size: 0.9rem;
+     }
+}
