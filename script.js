@@ -58,3 +58,13 @@ function resizeCanvas() {
 resizeCanvas();
 //3. (Optional but highly recommended) Keep it crisp if the window resizes or phone rotates
 window.addEventListener('resize', resizeCanvas);
+
+let colorEl = document.getElementById('color');
+colorEl.addEventListener('change', (e) => {
+     ctx.strokeStyle = e.target.value;
+});
+
+let clearBtn = document.getElementById('clear');
+clearBtn.addEventListener('click', () => {
+     ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
