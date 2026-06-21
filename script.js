@@ -59,7 +59,7 @@ resizeCanvas();
 //3. (Optional but highly recommended) Keep it crisp if the window resizes or phone rotates
 window.addEventListener('resize', resizeCanvas);
 
-let colorEl = document.getElementById('color');
+let colorEl = document.getElementById('color-input');
 colorEl.addEventListener('change', (e) => {
      ctx.strokeStyle = e.target.value;
 });
