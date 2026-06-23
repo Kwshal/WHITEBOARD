@@ -60,8 +60,11 @@ resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 
 let colorEl = document.getElementById('color-input');
+let colorInputWrapper = document.getElementById('color-input-wrapper');
+
 colorEl.addEventListener('change', (e) => {
      ctx.strokeStyle = e.target.value;
+     colorInputWrapper.style.backgroundColor = e.target.value;
 });
 
 let clearBtn = document.getElementById('clear-btn');
