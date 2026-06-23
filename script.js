@@ -64,7 +64,7 @@ colorEl.addEventListener('change', (e) => {
      ctx.strokeStyle = e.target.value;
 });
 
-let clearBtn = document.getElementById('clear');
+let clearBtn = document.getElementById('clear-btn');
 clearBtn.addEventListener('click', () => {
      ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
